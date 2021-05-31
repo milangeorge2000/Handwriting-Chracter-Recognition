@@ -22,34 +22,34 @@ def index():
     return render_template('index.html')
 
 
-def get_response(file):
-    with io.open(file,"rb") as img_file:
-       content = img_file.read()
-    image = types.Image(content=content)
-    client = vision.ImageAnnotatorClient()
-    response = client.text_detection(image=image)
-    text = response.text_annotations
-    return text
+# def get_response(file):
+#     with io.open(file,"rb") as img_file:
+#        content = img_file.read()
+#     image = types.Image(content=content)
+#     client = vision.ImageAnnotatorClient()
+#     response = client.text_detection(image=image)
+#     text = response.text_annotations
+#     return text
 
 
 
 
 
-@app.route('/predict', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST':
-        f = request.files['file']
-        # Get the file from post request
-        f.save("img.jpg")
-        df = pd.DataFrame(columns=['locale','description'])
-        text = get_response("img.jpg")
-        for t in text:
-            df = df.append(dict(locale=t.locale,description=t.description),ignore_index=True)
+# @app.route('/predict', methods=['GET', 'POST'])
+# def upload():
+#     if request.method == 'POST':
+#         f = request.files['file']
+#         # Get the file from post request
+#         f.save("img.jpg")
+#         df = pd.DataFrame(columns=['locale','description'])
+#         text = get_response("img.jpg")
+#         for t in text:
+#             df = df.append(dict(locale=t.locale,description=t.description),ignore_index=True)
         
-        # return render_template('prediction.html',prediction=df['description'][0])
+#         # return render_template('prediction.html',prediction=df['description'][0])
 
-        return jsonify(df['description'][0])
-        # print(df['description'][0])
+#         return jsonify(df['description'][0])
+#         # print(df['description'][0])
 
         
 
