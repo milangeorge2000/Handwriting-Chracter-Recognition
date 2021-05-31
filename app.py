@@ -7,7 +7,7 @@ import pandas as pd
 # from flask_ngrok import run_with_ngrok
 
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"vaine-notifier-a527aad48b7a.json"
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"vaine-notifier-a527aad48b7a.json"
 
 
 # Define a flask app
