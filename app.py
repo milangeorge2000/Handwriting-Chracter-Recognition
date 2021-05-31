@@ -1,5 +1,4 @@
-from flask import Flask
-# , redirect, url_for, request, render_template,jsonify
+from flask import Flaskredirect, url_for, request, render_template,jsonify
 # from werkzeug.utils import secure_filename
 # import os,io
 # from google.cloud.vision_v1 import types
@@ -20,7 +19,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def index():
     # Main page
-    return "hello"
+     return render_template('index.html')
 
 
 # def get_response(file):
