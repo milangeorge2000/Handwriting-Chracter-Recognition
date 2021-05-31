@@ -1,8 +1,8 @@
 from flask import Flask, redirect, url_for, request, render_template,jsonify
-from werkzeug.utils import secure_filename
+# from werkzeug.utils import secure_filename
 import os,io
 # from google.cloud.vision_v1 import types
-from google.cloud import vision
+# from google.cloud import vision
 import pandas as pd
 # from flask_ngrok import run_with_ngrok
 
