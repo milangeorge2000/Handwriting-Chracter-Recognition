@@ -22,14 +22,14 @@ def index():
      return render_template('index.html')
 
 
-# def get_response(file):
-#     with io.open(file,"rb") as img_file:
-#        content = img_file.read()
-#     image = types.Image(content=content)
-#     client = vision.ImageAnnotatorClient()
-#     response = client.text_detection(image=image)
-#     text = response.text_annotations
-#     return text
+def get_response(file):
+    with io.open(file,"rb") as img_file:
+       content = img_file.read()
+    image = types.Image(content=content)
+    client = vision.ImageAnnotatorClient()
+    response = client.text_detection(image=image)
+    text = response.text_annotations
+    return text
 
 
 
@@ -55,4 +55,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
